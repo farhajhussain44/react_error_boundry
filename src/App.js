@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import Component1 from './components/component1';
+import Component2 from './components/component2';
+import ErrorBoundary from './components/errorboundry';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>
+        <b>
+          This is an example of error boundaries in React 16.
+          <br /><br />
+          Click on the numbers to increase the counters.
+          <br />
+          The counter is programmed to throw when it reaches 5. This simulates a JavaScript error in a component.
+        </b>
+      </p>
+      <ErrorBoundary>
+        <Component1 />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Component2 />
+      </ErrorBoundary>
     </div>
   );
 }
